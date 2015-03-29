@@ -9,7 +9,7 @@ fm.Class("Result", function (me) {
 
 	this.getForEventIds = function (event_ids, user_keys, cb) {
 
-		me.elasticClient.search({
+		me.pio.elasticClient.search({
 			index: me.pio.config.elasticsearch.index,
 			q: user_keys,
 			type: "user"
