@@ -19,7 +19,7 @@ fm.Class("Result", function (me) {
 	};
 	function getPrediction (id, event_ids, cb) {
 		console.log(id, event_ids);
-		me.predictionEngine.sendQuery({
+		me.pio.predictionEngine.sendQuery({
 			user: id,
 			num: 10,
 			whiteList: event_ids
