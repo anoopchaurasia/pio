@@ -31,33 +31,30 @@ fm.Class("PioApply", function (me, Event, User, Rate) {
 	};
 
 	function createUser (user) {
-		console.log(user, "user");
 		me.pio.predictionClient.createUser(user)
 		.then(function (res, b) {
-		    console.log(res, 'added user');
+		    console.log(res, 'added user', user.entityId);
 		  }).catch(function  (a, b) {
-		  	console.error(a, b, "add useer error");
+		  	console.error(a, b, "add useer error", user.entityId);
 		  });
 	}
 
 	function createItem (item) {
-		console.log(item, "item");
 		me.pio.predictionClient.createItem(item).
 	    then(function(result, e) {
-	    	console.log(result, "add item");
+	    	console.log(result, "add item", item.entityId);
 	    }).catch(function(err) {
-	        console.error(err, "add event error");
+	        console.error(err, "add event error", item.entityId);
 	    });
 	}
 
 	function rateItem (rating) {
-		console.log(rating, "rating");
 		me.pio.predictionClient.createAction(rating).
 	    then(function(result) {
-	            console.log(result, "rated successfully");
+	            console.log(result, "rated successfully", rating.uid, rating.iid);
 	    }).
 	    catch(function(err) {
-	        console.error(err, "error in rating");
+	        console.error(err, "error in rating", rating.uid, rating.iid);
 	    });
 	}
 });

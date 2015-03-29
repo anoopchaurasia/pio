@@ -42,14 +42,14 @@ app.Pio = function (me, Result, PioApply){this.setMe=function(_me){me=_me;};
 
 	this.addevent = function (req, res) {
 		res.writeHead(200, {'Content-Type': 'text/html'});
-		res.write("Thank you");
+		res.write("Thank you " + req.params.id);
 		res.end();
 		me.pioApply.addEvent(req.params);
 	};
 
 	this.rateevent = function (req, res){
 		res.writeHead(200, {'Content-Type': 'text/html'});
-		res.write("Thank you");
+		res.write("Thank you " + req.params.user.id + " " + req.params.event.id);
 		res.end();
 		me.pioApply.rateEvent(req.params.event, req.params.user, req.params.rating);
 	};
@@ -57,7 +57,7 @@ app.Pio = function (me, Result, PioApply){this.setMe=function(_me){me=_me;};
 
 	this.adduser = function (req, res) {
 		res.writeHead(200, {'Content-Type': 'text/html'});
-		res.write("Thank you");
+		res.write("Thank you " + req.params.id);
 		res.end();
 		me.pioApply.addUser(req.params);
 	};

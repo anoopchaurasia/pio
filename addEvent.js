@@ -18,19 +18,20 @@ function addEvent(event_id) {
 		try{
 			var event = JSON.parse(response.body);
 			delete event.description;
+			delete event.address;
+			delete event.guests;
+			delete event.organisers;
 			console.log("adding event", event.id);
-			sendToPrediction(JSON.stringify(event));
-			if(!event.id){
-				return;
-			}
+			sendToPrediction(JSON.stringify(event) , function () {
+			}, event.id);
+			addEvent(++event_id);
 		} catch(e) {
 			console.error(e);
 		}
-		addEvent(++event_id);
 	});
 }
 
-function sendToPrediction (post_data) {
+function sendToPrediction (post_data, cb, event_id) {
 	 var post_options = {
 		host: config.server.host,
 		port: config.server.port,
@@ -44,13 +45,15 @@ function sendToPrediction (post_data) {
   	var post_req = require("http").request(post_options, function(res) {
       res.setEncoding('utf8');
       res.on('data', function (chunk) {
-          console.log('Response: ' + chunk);
+          console.log('Response: ' + chunk, event_id);
+          cb();
       });
   });
+  	console.log(post_data);
   post_req.write(post_data);
   post_req.end();
 };
 
-addEvent(1);
+addEvent(33);
 
 
