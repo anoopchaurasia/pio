@@ -11,9 +11,9 @@ app.Pio = function (me, Result, PioApply){this.setMe=function(_me){me=_me;};
 
 	Static.main = function(){
 		web = webPath;
-		// process.on('uncaughtException', function(e){
-		// 	console.error(e);
-		// });
+		process.on('uncaughtException', function(e){
+			console.error(e);
+		});
 		Starter.handle(require('http').createServer().listen(8888, "localhost"));
 	};
 
