@@ -10,6 +10,7 @@ Base = function (me){this.setMe=function(_me){me=_me;};
     this.POST = function(req, resp, method){
        var method = method || 'method';
        var cls = this.getSub();
+       console.log("method", method, req.params);
        cls[method](req, resp);
     };
 

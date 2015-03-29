@@ -7,14 +7,18 @@ fm.Class("Result", function (me) {
 		me.pio = pio;
 	};
 
-	this.getForEventIds = function (event_ids, user_keys, cb) {
+	this.getForEventIds = function (event_ids, user_keys, cb, ecb) {
 
 		me.pio.elasticClient.search({
 			index: me.pio.config.elasticsearch.index,
-			q: "*" +user_keys + "*",
+			q: "*" +user_keys.split(",")[0] + "*",
 			type: "user"
 		}).then(function(result){
 			console.log(me.pio.config.elasticsearch.index, user_keys, event_ids, result);
+			if(result.hits.hits.length == 0){
+				ecb();
+				return;
+			}
 			getPrediction(result.hits.hits[0]._id, event_ids, cb);
 		});
 	};

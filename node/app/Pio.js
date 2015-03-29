@@ -66,6 +66,10 @@ app.Pio = function (me, Result, PioApply){this.setMe=function(_me){me=_me;};
 				res.writeHead(200, {'Content-Type': 'application/json'});
 				res.write(JSON.stringify(resp));
 				res.end();
+		}, function (){
+			res.writeHead(200, {'Content-Type': 'application/json'});
+			res.write('{"itemScores": []}');
+			res.end();
 		});
 	};
 
