@@ -6,7 +6,7 @@ fm.Class("Pio", "Base");
 app.Pio = function (me, Result, PioApply){this.setMe=function(_me){me=_me;};
 	'use strict';
 	this.init = function () {
-		Static.config = JSON.parse(require("fs").readFileSync('config.json').toString('utf-8'));
+		Static.config = JSON.parse(require("fs").readFileSync(__dirname +'/../../config.json').toString('utf-8'));
 	};
 
 	Static.main = function(){
