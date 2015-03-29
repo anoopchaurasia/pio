@@ -7,7 +7,7 @@ function addEvent(event_id) {
 	require("request")
 	.get("http://"+config.eventzio.host+":"+config.eventzio.port+"/events/"+event_id+".json", function (err, response) {
 		if(response.statusCode == 404) {
-			if(event_id > 450)
+			if(event_id > 450){
 				console.log(response.body);
 				process.exit(0);
 				return;
