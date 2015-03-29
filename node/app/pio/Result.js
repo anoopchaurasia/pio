@@ -11,16 +11,17 @@ fm.Class("Result", function (me) {
 
 		me.pio.elasticClient.search({
 			index: me.pio.config.elasticsearch.index,
-			q: user_keys,
+			q: "*" +user_keys + "*",
 			type: "user"
 		}).then(function(result){
+			console.log(me.pio.config.elasticsearch.index, user_keys, event_ids, result);
 			getPrediction(result.hits.hits[0]._id, event_ids, cb);
 		});
 	};
 	function getPrediction (id, event_ids, cb) {
 		console.log(id, event_ids);
 		me.pio.predictionEngine.sendQuery({
-			user: id,
+			user: "u" + id,
 			num: 10,
 			whiteList: event_ids
 		}, cb);
