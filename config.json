@@ -1,0 +1,19 @@
+{
+	"elasticsearch": {
+		"host" : "localhost",
+		"port": "9201",
+		"index": "prediction_eventzio"
+	},
+	"eventzio": {
+		"host": "eventz.io",
+		"port": "4321"
+	},
+	"predictionio": {
+		"host": "localhost",
+		"accesskey": "NcwUD9PamMLzy9I5GBwOiWYYh9innmYPZLydmdGRHxmRuX1CHY8epilS80n7BOLJ",
+		"engineport": 8000,
+		"eventport": 7070,
+		"appid": 1
+	},
+	"googlesheet": "1kfvBxRPnh3V_uVH9W9AwBNPgGlI4G0cBDzPRKun_58M"
+}

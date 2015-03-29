@@ -1,0 +1,19 @@
+{
+  "name": "pio",
+  "version": "0.0.1",
+  "homepage": "https://github.com/anoopchaurasia/pio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anoopchaurasia/pio"
+  },
+  "author": {
+    "name": "anoop",
+    "email": "anoop26667@gmail.com"
+  },
+  "main": "node/start.js",
+  "dependencies": {
+    "jsfm-starter": "git://github.com/anoopchaurasia/starter.git",
+    "elasticsearch": "latest",
+    "predictionio-driver": "*"
+  }
+}
