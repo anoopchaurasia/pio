@@ -15,5 +15,9 @@
 		"eventport": 7070,
 		"appid": 1
 	},
+	"server": {
+		"host": "54.69.198.195",
+		"port": 8888
+	},
 	"googlesheet": "1kfvBxRPnh3V_uVH9W9AwBNPgGlI4G0cBDzPRKun_58M"
 }
