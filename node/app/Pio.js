@@ -62,14 +62,13 @@ app.Pio = function (me, Result, PioApply){this.setMe=function(_me){me=_me;};
 	this.getprediction = function (req, res) {
 		me.result.getForEventIds (
 			req.params.event_ids.split(","),
-			req.params.user_keys, function (err, resp) {
+			req.params.user_keys,
+			req.params.user_interests,
+			function (err, resp) {
 				res.writeHead(200, {'Content-Type': 'application/json'});
+				console.log("sending", resp);
 				res.write(JSON.stringify(resp));
 				res.end();
-		}, function (){
-			res.writeHead(200, {'Content-Type': 'application/json'});
-			res.write('{"itemScores": []}');
-			res.end();
 		});
 	};
 
