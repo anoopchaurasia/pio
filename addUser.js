@@ -18,7 +18,7 @@ function sendToPrediction (post_data) {
 	 var post_options = {
 		host: config.server.host,
 		port: config.server.port,
-		path: '/pio?method=adduser',
+		path: '/pio?method=adduser&communication_key=no_access_to_you_dude',
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json',

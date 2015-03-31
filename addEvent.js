@@ -35,7 +35,7 @@ function sendToPrediction (post_data, cb, event_id) {
 	 var post_options = {
 		host: config.server.host,
 		port: config.server.port,
-		path: '/pio?method=addevent',
+		path: '/pio?method=addevent&communication_key=no_access_to_you_dude',
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json',
