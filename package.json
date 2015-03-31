@@ -14,6 +14,7 @@
   "dependencies": {
     "jsfm-starter": "git://github.com/anoopchaurasia/starter.git",
     "elasticsearch": "latest",
-    "predictionio-driver": "*"
+    "predictionio-driver": "*",
+    "qs": "*"
   }
 }
