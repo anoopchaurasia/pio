@@ -27,7 +27,7 @@ fm.Class("PioApply", function (me, Event, User, Rate) {
 
 	this.rateEvent = function (event, user, rating) {
 		var rateEvent = new Rate(event, user, rating);
-		rateItem(rateItem);
+		rateItem(rateEvent.toRating());
 	};
 
 	function createUser (user) {
